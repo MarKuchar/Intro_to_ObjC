@@ -14,6 +14,8 @@ int main(int argc, const char * argv[]) {
         while (*inputChars != 'q') {
             printf("Enter your 'string' for operations or press 'q' to quit.\n");
             fgets(inputChars, 255, stdin);
+            
+            // find in the classes
             inputChars[strcspn(inputChars, "\n")] = '\0';
             
             NSString *inputString = [NSString stringWithUTF8String:inputChars];
@@ -43,7 +45,6 @@ int main(int argc, const char * argv[]) {
                         } else {
                             printf("Cannot be numbersized..\n");
                         }
-                    
                         break;
                     case 4:
                         printf("'%s' canadianized: %s \n", inputChars, (char*)[[inputString stringByAppendingString:@", eh?"] UTF8String]);
