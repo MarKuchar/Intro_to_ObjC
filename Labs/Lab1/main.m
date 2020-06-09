@@ -14,10 +14,10 @@ int main(int argc, const char * argv[]) {
         while (*inputChars != 'q') {
             printf("Enter your 'string' for operations or press 'q' to quit.\n");
             fgets(inputChars, 255, stdin);
-            NSString *inputString = [NSString stringWithUTF8String:inputChars];
             inputChars[strcspn(inputChars, "\n")] = '\0';
-            NSLog(@"%@", inputString);
-            if (*inputChars != 'q') {
+            
+            NSString *inputString = [NSString stringWithUTF8String:inputChars];
+            if (![inputString isEqualToString:@"q"]) {
                 printf("Choose an operation you want to execute with '%s':\n"
                         "1. Uppercase\n"
                         "2. Lowercase\n"
@@ -37,17 +37,21 @@ int main(int argc, const char * argv[]) {
                     case 2:
                         printf("'%s' lowercased: %s \n", inputChars, [[inputString lowercaseString] UTF8String]);
                         break;
-                    case 3:;
-                        [inputString stringByAppendingString:@", eh"];
-                        printf("'%s' numbersized: %s \n", inputChars, [inputString UTF8String]);
+                    case 3:
+                        if (atoi((char*)[inputString UTF8String]) != 0) {
+                            printf("'%s' numbersized: %d \n", inputChars, atoi((char*)[inputString UTF8String]));
+                        } else {
+                            printf("Cannot be numbersized..\n");
+                        }
+                    
                         break;
                     case 4:
-                        printf("'%s' canadianized: %s \n", inputChars, (char*)[[inputString stringByAppendingString:@", eh"] UTF8String]);
+                        printf("'%s' canadianized: %s \n", inputChars, (char*)[[inputString stringByAppendingString:@", eh?"] UTF8String]);
                         break;
                     case 5:
-                        if ([[inputString substringFromIndex: [inputString length] - 1] isEqualToString :@"?"]) {
+                        if ([[inputString substringFromIndex: [inputString length] - 1] isEqualToString : @"?"]) {
                             printf("I don't know.\n");
-                        } else if ([[inputString substringFromIndex: [inputString length] - 1] isEqualToString :@"!"]) {
+                        } else if ([[inputString substringFromIndex: [inputString length] - 1] isEqualToString : @"!"]) {
                             printf("Whoa, calm down!\n");
                         }
                         break;
