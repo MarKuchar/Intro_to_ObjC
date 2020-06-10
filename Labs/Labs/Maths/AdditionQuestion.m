@@ -7,16 +7,26 @@
 //
 
 #import "AdditionQuestion.h"
+#import "UserInput.h"
 
 @implementation AdditionQuestion
 
-+ (NSString *) randomQuestion {
+- (instancetype)init {
+if (self = [super init]) {
     NSUInteger firstNumber = arc4random_uniform(100);
     NSUInteger secondNumber = arc4random_uniform(100);
-    NSInteger result = firstNumber + secondNumber;
-    NSString* myNewString = [NSString stringWithFormat:@"%lu + %lu = ?", firstNumber, secondNumber];
-    
-    return myNewString;
+    _question = [NSString stringWithFormat:@"%lu + %lu = ?", firstNumber, secondNumber];
+    _answer = firstNumber + secondNumber;
+}
+return self;
+}
+
+- (void) compareAnswer: (NSString *) answer andResult: (NSString *) result {
+    if ([answer isEqualToString:result]) {
+        NSLog(@"Correct");
+    } else {
+        NSLog(@"Wrong!");
+    }
 }
 
 @end

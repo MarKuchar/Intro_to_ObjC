@@ -7,27 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserInput.h"
 #import "AdditionQuestion.h"
 
-NSString *getUserInput(int length, NSString *promt) {
-    if (length < 1) {
-        length = 255;
-    }
-    NSLog(@"%@",promt);
-    char userInputChars[length];
-    char *result = fgets(userInputChars, length, stdin);
-    if (result != NULL) {
-        return [[NSString stringWithCString:userInputChars encoding:NSUTF8StringEncoding] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    }
-    return NULL;
-}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        NSLog(@"Maths!\n");
         while (1) {
-//            AdditionQuestion 
-//            NSString *new = getUserInput(255, @"Functioning");
-//            NSLog(@"%@", new);
+            AdditionQuestion *question = [[AdditionQuestion alloc] init];
+            NSString* userGuess = [UserInput getUserInput:255 withMessage: [question question]];
+            if ([userGuess isEqualToString:@"quit"]) {
+                break;
+            }
+            [question compareAnswer:[NSString stringWithFormat:@"%lu", [question answer]] andResult:userGuess];
         }
     }
     return 0;

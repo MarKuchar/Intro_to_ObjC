@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AdditionQuestion : NSObject
 
-+ (NSString *) randomQuestion;
+@property (nonatomic) NSUInteger answer;
+@property (nonatomic) NSString *question;
+
+//+ (NSString *) randomQuestion;
+- (void) compareAnswer: (NSString *) answer andResult: (NSString *) result;
 
 @end
 
