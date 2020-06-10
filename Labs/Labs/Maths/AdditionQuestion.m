@@ -21,11 +21,13 @@ if (self = [super init]) {
 return self;
 }
 
-- (void) compareAnswer: (NSString *) answer andResult: (NSString *) result {
+- (bool) compareAnswer: (NSString *) answer andResult: (NSString *) result {
     if ([answer isEqualToString:result]) {
         NSLog(@"Correct");
+        return true;
     } else {
         NSLog(@"Wrong!");
+        return false;
     }
 }
 

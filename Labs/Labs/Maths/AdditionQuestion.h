@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *question;
 
 //+ (NSString *) randomQuestion;
-- (void) compareAnswer: (NSString *) answer andResult: (NSString *) result;
+- (bool) compareAnswer: (NSString *) answer andResult: (NSString *) result;
 
 @end
 

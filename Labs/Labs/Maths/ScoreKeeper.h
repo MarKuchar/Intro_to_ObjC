@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSUInteger right;
 @property (nonatomic) NSUInteger wrong;
+- (NSString *) countScore;
 
 @end
 

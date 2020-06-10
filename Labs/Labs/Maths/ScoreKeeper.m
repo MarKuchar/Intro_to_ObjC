@@ -10,4 +10,9 @@
 
 @implementation ScoreKeeper
 
+- (NSString *) countScore {
+    NSUInteger result = 100 / (_right + _wrong) * _right;
+    return [NSString stringWithFormat:@"Score: %lu right, %lu wrong ----> %lu%%", (unsigned long)_right, _wrong, result];
+}
+
 @end
