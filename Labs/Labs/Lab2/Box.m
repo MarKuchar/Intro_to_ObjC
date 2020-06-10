@@ -14,7 +14,7 @@
     float _lenght;
 }
 
-- (instancetype)initWithHeight: (float) height  width: (float) width andLenght: (float) lenght
+- (instancetype)initWithHeight: (float) height  width: (float) width andLength: (float) lenght
 {
     self = [super init];
     if (self) {
