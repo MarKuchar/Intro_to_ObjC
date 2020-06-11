@@ -13,8 +13,8 @@
 
 - (instancetype)init {
 if (self = [super init]) {
-    _rightValue = arc4random_uniform(100);
-    _leftValue = arc4random_uniform(100);
+    _rightValue = arc4random_uniform(20);
+    _leftValue = arc4random_uniform(20);
     _question = [NSString stringWithFormat:@"%lu + %lu = ?", _leftValue, _rightValue];
     _answer = _leftValue + _rightValue;
     _startTime = [NSDate date];

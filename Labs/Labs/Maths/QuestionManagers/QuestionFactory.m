@@ -13,13 +13,13 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _questionSubclasses = @[@"AdditionalQuestion", @"SubtractionQuestion"];
+        _questionSubclasses = @[@"AdditionalQuestion", @"SubtractionQuestion", @"MultiplicationQuestion", @"DeletionQuestion"];
     }
     return self;
 }
 
 - (NSString *) generateRandomQuestion {
-    NSInteger index = arc4random_uniform(2);
+    NSInteger index = arc4random_uniform(4);
     return [_questionSubclasses objectAtIndex:index];
 }
 

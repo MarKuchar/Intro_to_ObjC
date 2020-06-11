@@ -22,6 +22,7 @@ int main(int argc, const char * argv[]) {
         
         while (1) {
             Question *question = [[NSClassFromString([questionFactory generateRandomQuestion]) alloc] init];
+            NSLog(@"Question number: %lu", (unsigned long)[[questionManager questions] count] + 1);
             NSString* userGuess = [UserInput getUserInput:255 withMessage: [question question]];
             if ([userGuess isEqualToString:@"quit"]) {
                 NSLog(@"%@", [scorekeeper countScore]);
@@ -33,9 +34,8 @@ int main(int argc, const char * argv[]) {
             } else {
                 scorekeeper.wrong += 1;
             }
+            NSLog(@"%@\n", [questionManager timeOutput]);
         }
-        NSLog(@"%lu", (unsigned long)[[questionManager questions] count]);
-        NSLog(@"%@", [questionManager timeOutput]);
     }
     return 0;
 }
