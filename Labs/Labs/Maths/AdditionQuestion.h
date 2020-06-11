@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSUInteger answer;
 @property (nonatomic) NSString *question;
+@property (nonatomic) NSDate *startTime;
+@property (nonatomic) NSDate *endTime;
 
 //+ (NSString *) randomQuestion;
 - (bool) compareAnswer: (NSString *) answer andResult: (NSString *) result;

@@ -17,8 +17,14 @@ if (self = [super init]) {
     NSUInteger secondNumber = arc4random_uniform(100);
     _question = [NSString stringWithFormat:@"%lu + %lu = ?", firstNumber, secondNumber];
     _answer = firstNumber + secondNumber;
+    _startTime = [NSDate date];
 }
 return self;
+}
+
+- (NSUInteger)answer {
+    _endTime = [NSDate date];
+    return _answer;
 }
 
 - (bool) compareAnswer: (NSString *) answer andResult: (NSString *) result {
@@ -29,6 +35,11 @@ return self;
         NSLog(@"Wrong!");
         return false;
     }
+}
+
+- (NSTimeInterval) answerTime {
+    NSTimeInterval timeInterval = [_endTime timeIntervalSinceDate: _startTime];
+    return timeInterval;
 }
 
 @end
