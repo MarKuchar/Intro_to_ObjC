@@ -17,7 +17,6 @@
 		95C5D2282492D20800BDAB77 /* Greeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C5D2272492D20800BDAB77 /* Greeter.m */; };
 		95C5D22B2492D4ED00BDAB77 /* FriendlyGreetingDecider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C5D22A2492D4ED00BDAB77 /* FriendlyGreetingDecider.m */; };
 		95C5D2312492DA5300BDAB77 /* FoodTruck.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C5D22E2492DA5300BDAB77 /* FoodTruck.m */; };
-		95C5D2342492DAD000BDAB77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C5D2332492DAD000BDAB77 /* main.m */; };
 		95C793312491881700C24FBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C793302491881700C24FBD /* main.m */; };
 		95C793372491894C00C24FBD /* NSString+PigLatin.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C793362491894C00C24FBD /* NSString+PigLatin.m */; };
 		95C7933A2491E4AA00C24FBD /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C793392491E4AA00C24FBD /* QuestionManager.m */; };
@@ -26,6 +25,8 @@
 		95C7934D2491FC0D00C24FBD /* QuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C7934C2491FC0D00C24FBD /* QuestionFactory.m */; };
 		95C79351249202D100C24FBD /* DeletionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C79350249202D100C24FBD /* DeletionQuestion.m */; };
 		95C79354249202FE00C24FBD /* MultiplicationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C79353249202FE00C24FBD /* MultiplicationQuestion.m */; };
+		95F0D0B62492DC92004FB288 /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0B52492DC92004FB288 /* Cook.m */; };
+		95F0D0B82492DF20004FB288 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0B72492DF20004FB288 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,7 +99,6 @@
 		95C5D22A2492D4ED00BDAB77 /* FriendlyGreetingDecider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendlyGreetingDecider.m; sourceTree = "<group>"; };
 		95C5D22E2492DA5300BDAB77 /* FoodTruck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTruck.m; sourceTree = "<group>"; };
 		95C5D2302492DA5300BDAB77 /* FoodTruck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTruck.h; sourceTree = "<group>"; };
-		95C5D2332492DAD000BDAB77 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "../../../../../Downloads/iOS-Delegates-1-FoodTruck-master/Foodtruck/main.m"; sourceTree = "<group>"; };
 		95C7932E2491881700C24FBD /* Lab13 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab13; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C793302491881700C24FBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95C793352491894C00C24FBD /* NSString+PigLatin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PigLatin.h"; sourceTree = "<group>"; };
@@ -115,6 +115,9 @@
 		95C79350249202D100C24FBD /* DeletionQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeletionQuestion.m; sourceTree = "<group>"; };
 		95C79352249202FE00C24FBD /* MultiplicationQuestion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiplicationQuestion.h; sourceTree = "<group>"; };
 		95C79353249202FE00C24FBD /* MultiplicationQuestion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiplicationQuestion.m; sourceTree = "<group>"; };
+		95F0D0B42492DC92004FB288 /* Cook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cook.h; sourceTree = "<group>"; };
+		95F0D0B52492DC92004FB288 /* Cook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cook.m; sourceTree = "<group>"; };
+		95F0D0B72492DF20004FB288 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,9 +214,9 @@
 		95C5D21B2492CA7E00BDAB77 /* Lab9 */ = {
 			isa = PBXGroup;
 			children = (
-				95C5D2332492DAD000BDAB77 /* main.m */,
 				95C5D22D2492DA3800BDAB77 /* FoodTrack */,
 				95C5D22C2492DA0300BDAB77 /* SayHello! */,
+				95F0D0B72492DF20004FB288 /* main.m */,
 			);
 			path = Lab9;
 			sourceTree = "<group>";
@@ -234,6 +237,8 @@
 			children = (
 				95C5D2302492DA5300BDAB77 /* FoodTruck.h */,
 				95C5D22E2492DA5300BDAB77 /* FoodTruck.m */,
+				95F0D0B42492DC92004FB288 /* Cook.h */,
+				95F0D0B52492DC92004FB288 /* Cook.m */,
 			);
 			path = FoodTrack;
 			sourceTree = "<group>";
@@ -455,7 +460,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C5D2342492DAD000BDAB77 /* main.m in Sources */,
+				95F0D0B82492DF20004FB288 /* main.m in Sources */,
+				95F0D0B62492DC92004FB288 /* Cook.m in Sources */,
 				95C5D2282492D20800BDAB77 /* Greeter.m in Sources */,
 				95C5D22B2492D4ED00BDAB77 /* FriendlyGreetingDecider.m in Sources */,
 				95C5D2312492DA5300BDAB77 /* FoodTruck.m in Sources */,

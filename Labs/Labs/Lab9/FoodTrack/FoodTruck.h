@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @class FoodTruck;
 
 @protocol FoodTruckDelegate <NSObject>
@@ -25,4 +26,5 @@
 -(void)serve:(int)orders;
 -(void)cashOut;
 
+NS_ASSUME_NONNULL_END
 @end

@@ -22,6 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<GreeterDelegate> delegate;
 - (NSString *) shouldSayHello;
 
+NS_ASSUME_NONNULL_END
 @end
 
-NS_ASSUME_NONNULL_END

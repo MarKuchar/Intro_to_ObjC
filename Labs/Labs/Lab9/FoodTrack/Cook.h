@@ -1,5 +1,5 @@
 //
-//  NSObject+Greeter.h
+//  Cook.h
 //  Lab9
 //
 //  Created by Martin Kuchar on 2020-06-11.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FoodTruck.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject ()
+@interface Cook : NSObject <FoodTruckDelegate>;
 
 @end
 
