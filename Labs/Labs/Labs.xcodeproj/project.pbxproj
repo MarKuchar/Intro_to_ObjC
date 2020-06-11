@@ -27,6 +27,7 @@
 		95C79354249202FE00C24FBD /* MultiplicationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C79353249202FE00C24FBD /* MultiplicationQuestion.m */; };
 		95F0D0B62492DC92004FB288 /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0B52492DC92004FB288 /* Cook.m */; };
 		95F0D0B82492DF20004FB288 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0B72492DF20004FB288 /* main.m */; };
+		95F0D0BB2492E41D004FB288 /* Charge.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0BA2492E41D004FB288 /* Charge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +119,8 @@
 		95F0D0B42492DC92004FB288 /* Cook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cook.h; sourceTree = "<group>"; };
 		95F0D0B52492DC92004FB288 /* Cook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cook.m; sourceTree = "<group>"; };
 		95F0D0B72492DF20004FB288 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95F0D0B92492E41D004FB288 /* Charge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Charge.h; sourceTree = "<group>"; };
+		95F0D0BA2492E41D004FB288 /* Charge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Charge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +242,8 @@
 				95C5D22E2492DA5300BDAB77 /* FoodTruck.m */,
 				95F0D0B42492DC92004FB288 /* Cook.h */,
 				95F0D0B52492DC92004FB288 /* Cook.m */,
+				95F0D0B92492E41D004FB288 /* Charge.h */,
+				95F0D0BA2492E41D004FB288 /* Charge.m */,
 			);
 			path = FoodTrack;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F0D0B82492DF20004FB288 /* main.m in Sources */,
+				95F0D0BB2492E41D004FB288 /* Charge.m in Sources */,
 				95F0D0B62492DC92004FB288 /* Cook.m in Sources */,
 				95C5D2282492D20800BDAB77 /* Greeter.m in Sources */,
 				95C5D22B2492D4ED00BDAB77 /* FriendlyGreetingDecider.m in Sources */,
