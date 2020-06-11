@@ -8,31 +8,34 @@
 
 #import <Foundation/Foundation.h>
 #import "UserInput.h"
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSLog(@"Maths!\n");
+        NSLog(@"Maths!\n\n");
         ScoreKeeper *scorekeeper = [[ScoreKeeper alloc] init];
         QuestionManager *questionManager = [[QuestionManager alloc] init];
+        QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
         
         while (1) {
-            AdditionQuestion *question = [[AdditionQuestion alloc] init];
-            [[questionManager questions] addObject:question];
+            Question *question = [[NSClassFromString([questionFactory generateRandomQuestion]) alloc] init];
             NSString* userGuess = [UserInput getUserInput:255 withMessage: [question question]];
             if ([userGuess isEqualToString:@"quit"]) {
                 NSLog(@"%@", [scorekeeper countScore]);
                 break;
             }
+            [[questionManager questions] addObject:question];
             if ([question compareAnswer:[NSString stringWithFormat:@"%lu", [question answer]] andResult:userGuess]) {
                 scorekeeper.right += 1;
             } else {
                 scorekeeper.wrong += 1;
             }
-            NSLog(@"%f", [question answerTime]);
         }
+        NSLog(@"%lu", (unsigned long)[[questionManager questions] count]);
+        NSLog(@"%@", [questionManager timeOutput]);
     }
     return 0;
 }

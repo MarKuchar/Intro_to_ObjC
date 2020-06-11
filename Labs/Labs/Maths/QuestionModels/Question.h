@@ -10,16 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AdditionQuestion : NSObject
+@interface Question : NSObject
 
 @property (nonatomic) NSUInteger answer;
 @property (nonatomic) NSString *question;
 @property (nonatomic) NSDate *startTime;
 @property (nonatomic) NSDate *endTime;
+@property (nonatomic) NSUInteger rightValue;
+@property (nonatomic) NSUInteger leftValue;
 
 //+ (NSString *) randomQuestion;
 - (bool) compareAnswer: (NSString *) answer andResult: (NSString *) result;
 - (NSTimeInterval) answerTime;
+- (void) generateQuestion;
 
 @end
 

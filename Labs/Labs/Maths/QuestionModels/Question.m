@@ -6,17 +6,17 @@
 //  Copyright © 2020 Martin Kuchar. All rights reserved.
 //
 
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "UserInput.h"
 
-@implementation AdditionQuestion
+@implementation Question
 
 - (instancetype)init {
 if (self = [super init]) {
-    NSUInteger firstNumber = arc4random_uniform(100);
-    NSUInteger secondNumber = arc4random_uniform(100);
-    _question = [NSString stringWithFormat:@"%lu + %lu = ?", firstNumber, secondNumber];
-    _answer = firstNumber + secondNumber;
+    _rightValue = arc4random_uniform(100);
+    _leftValue = arc4random_uniform(100);
+    _question = [NSString stringWithFormat:@"%lu + %lu = ?", _leftValue, _rightValue];
+    _answer = _leftValue + _rightValue;
     _startTime = [NSDate date];
 }
 return self;
@@ -41,5 +41,7 @@ return self;
     NSTimeInterval timeInterval = [_endTime timeIntervalSinceDate: _startTime];
     return timeInterval;
 }
+
+- (void) generateQuestion {}
 
 @end
