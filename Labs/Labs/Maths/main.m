@@ -10,13 +10,17 @@
 #import "UserInput.h"
 #import "AdditionQuestion.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSLog(@"Maths!\n");
         ScoreKeeper *scorekeeper = [[ScoreKeeper alloc] init];
+        QuestionManager *questionManager = [[QuestionManager alloc] init];
+        
         while (1) {
             AdditionQuestion *question = [[AdditionQuestion alloc] init];
+            [[questionManager questions] addObject:question];
             NSString* userGuess = [UserInput getUserInput:255 withMessage: [question question]];
             if ([userGuess isEqualToString:@"quit"]) {
                 NSLog(@"%@", [scorekeeper countScore]);
@@ -27,6 +31,7 @@ int main(int argc, const char * argv[]) {
             } else {
                 scorekeeper.wrong += 1;
             }
+            NSLog(@"%f", [question answerTime]);
         }
     }
     return 0;

@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //+ (NSString *) randomQuestion;
 - (bool) compareAnswer: (NSString *) answer andResult: (NSString *) result;
+- (NSTimeInterval) answerTime;
 
 @end
 
