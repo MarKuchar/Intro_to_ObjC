@@ -10,8 +10,11 @@
 
 @implementation Greeter
 
-- (BOOL) shouldSayHello {
-    return [_delegate shouldSayHello];
+- (NSString *) shouldSayHello {
+    if ([_delegate shouldSayHello]) {
+        return @"Hello!";
+    }
+    return @"";
 }
 
 @end

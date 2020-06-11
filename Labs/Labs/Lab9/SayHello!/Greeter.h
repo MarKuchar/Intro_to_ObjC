@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Greeter : NSObject
 
 @property (nonatomic, weak) id<GreeterDelegate> delegate;
-
+- (NSString *) shouldSayHello;
 
 @end
 

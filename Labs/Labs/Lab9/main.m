@@ -12,10 +12,6 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Greeter *greeter = [[Greeter alloc] init];
-        FriendlyGreetingDecider *greetingDecider = [[FriendlyGreetingDecider alloc] init];
-        greeter.delegate = greetingDecider;
-        
         
     }
     return 0;
