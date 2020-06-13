@@ -10,4 +10,8 @@
 
 @implementation PaymentGateway
 
+- (void) processPaymentAmount: (int) amount {
+    
+}
+
 @end
