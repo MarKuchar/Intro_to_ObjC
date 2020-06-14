@@ -11,11 +11,18 @@
 #import "PaypalPaymentService.h"
 #import "StripePaymentService.h"
 #import "AmazonPaymentService.h"
+#import "ApplePaymentService.h"
+
+void setDelegate (NSString* paymentService, PaymentGateway* paymentGateway, NSUInteger amount) {
+    id service = [[NSClassFromString(paymentService) alloc] init];
+    paymentGateway.paymentDelegate = service;
+    [paymentGateway processPaymentAmount: amount];
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        int value = arc4random_uniform(100) * 10;
-        NSLog(@"Thank you for shopping at Acme.com Your total today is $xxx Please select your payment method: 1: Paypal, 2: Stripe, 3: Amazon");
+        NSInteger value = arc4random_uniform(100) * 10;
+        NSLog(@"Thank you for shopping at Acme.com\nYour total today is $%ld\nPlease select your payment method:\n1: Paypal, 2: Stripe, 3: Amazon, 4: ApplePay", value);
         char userInput[255];
         char *inputChar = fgets(userInput, 255, stdin);
         if (inputChar) {
@@ -23,29 +30,25 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%ld", input);
          
             PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
-                   [paymentGateway processPaymentAmount:value];
             
             switch (input) {
                 case 1:
-                    {
-                        PaypalPaymentService *paypal = [[PaypalPaymentService alloc] init];
-                        paymentGateway.paymentDelegate = paypal;
-                    }
+                    setDelegate(@"PaypalPaymentService", paymentGateway, value);
                     break;
                 case 2:
-                    {
-                        StripePaymentService *stripe = [[StripePaymentService alloc] init];
-                    }
+                    setDelegate(@"StripePaymentService", paymentGateway, value);
+                    break;
                 case 3:
-                    {
-                        AmazonPaymentService *amazon = [[AmazonPaymentService alloc] init];
-                    }
+                    setDelegate(@"AmazonPaymentService", paymentGateway, value);
+                    break;
+                case 4:
+                    setDelegate(@"ApplePaymentService", paymentGateway, value);
+                    break;
                 default:
+                    NSLog(@"Incorrect input!");
                     break;
             }
-            
         }
-        
     }
     return 0;
 }
