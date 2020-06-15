@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Dice.h"
+#import "GameController.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,7 +19,9 @@ int main(int argc, const char * argv[]) {
         Dice *fifth = [[Dice alloc] init];
         Dice *sixth = [[Dice alloc] init];
         
-        NSArray *dices = [NSArray arrayWithObjects: first, second, third, fourth, fifth, sixth, nil];
+        GameController *gameController = [[GameController alloc] init];
+        gameController.dices = @[first, second, third, fourth, fifth, sixth];
+        
 
         NSLog(@"%lu", first.currentValue);
         NSLog(@"%lu", second.currentValue);
@@ -32,7 +35,7 @@ int main(int argc, const char * argv[]) {
             NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
             if ([input isEqualToString:@"roll"]) {
-                for (Dice* dice in dices) {
+                for (Dice* dice in gameController.dices) {
                     [dice randomizeDiceValue];
                     NSLog(@"%lu", dice.currentValue);
                 }
