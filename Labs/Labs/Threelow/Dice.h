@@ -11,10 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, DiceValue) {
-    one,
-    two,
-    three,
-    four,
+    one = 1,
+    two = 2,
+    three = 3,
+    four = 4,
     five,
     six,
 };
@@ -22,6 +22,9 @@ typedef NS_ENUM(NSInteger, DiceValue) {
 @interface Dice : NSObject
 
 @property (nonatomic) DiceValue currentValue;
+
+- (DiceValue) randomizeDiceValue;
+
 
 @end
 

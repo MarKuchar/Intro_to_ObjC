@@ -11,7 +11,18 @@
 @implementation Dice
 
 - (DiceValue) randomizeDiceValue {
-    return (DiceValue) arc4random_uniform(7);
+    _currentValue = (DiceValue) arc4random_uniform(7);
+    return _currentValue;
+}
+
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _currentValue = (DiceValue) arc4random_uniform(7);
+    }
+    return self;
 }
 
 @end

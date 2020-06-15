@@ -14,10 +14,31 @@ int main(int argc, const char * argv[]) {
         Dice *first = [[Dice alloc] init];
         Dice *second = [[Dice alloc] init];
         Dice *third = [[Dice alloc] init];
+        Dice *fourth = [[Dice alloc] init];
         Dice *fifth = [[Dice alloc] init];
         Dice *sixth = [[Dice alloc] init];
         
+        NSArray *dices = [NSArray arrayWithObjects: first, second, third, fourth, fifth, sixth, nil];
+
+        NSLog(@"%lu", first.currentValue);
+        NSLog(@"%lu", second.currentValue);
+        NSLog(@"%lu", third.currentValue);
         
+        NSInteger play = 1;
+        while (1) {
+            char arrayOfChar[255];
+            printf("Enter your option.\n");
+            fgets(arrayOfChar, 255, stdin);
+            NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            
+            if ([input isEqualToString:@"roll"]) {
+                for (Dice* dice in dices) {
+                    [dice randomizeDiceValue];
+                    NSLog(@"%lu", dice.currentValue);
+                }
+            }
+        }
+    
     }
     return 0;
 }
