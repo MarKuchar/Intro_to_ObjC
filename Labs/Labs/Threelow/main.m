@@ -23,9 +23,7 @@ int main(int argc, const char * argv[]) {
         gameController.dice = @[first, second, third, fourth, fifth, sixth];
         
 
-        NSLog(@"%lu", first.currentValue);
-        NSLog(@"%lu", second.currentValue);
-        NSLog(@"%lu", third.currentValue);
+        NSString *diceSet = [NSString new];
         
         while (1) {
             char arrayOfChar[255];
@@ -33,14 +31,18 @@ int main(int argc, const char * argv[]) {
             fgets(arrayOfChar, 255, stdin);
             NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
+            diceSet = @"";
+            
             if ([input isEqualToString:@"roll"]) {
                 for (Dice* dice in gameController.dice) {
                     [dice randomizeDiceValue];
-                    NSLog(@"%lu", dice.currentValue);
+                    diceSet = [diceSet stringByAppendingFormat:@"%lu ", dice.currentValue];
                 }
+            } else if ([input isEqualToString:@"hold"]) {
+                
             }
+            printf("%s\n", [diceSet UTF8String]);
         }
-    
     }
     return 0;
 }

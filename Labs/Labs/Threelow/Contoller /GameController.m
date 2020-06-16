@@ -11,7 +11,8 @@
 @implementation GameController
 
 - (void) holdDie: (NSInteger *) dice {
-    [_dictionaryHoldDice setObject:[_dice objectAtIndex: (long)dice] forKey:[NSString stringWithFormat:@"%lu", (long)dice]];
+    Dice *heldDice = [_dice objectAtIndex: (long)dice];
+    [_dictionaryHeldDice setObject:[NSString stringWithFormat:@"[%lu]", heldDice.currentValue] forKey:[NSNumber numberWithInteger: (long) dice]];
 }
 
 @end

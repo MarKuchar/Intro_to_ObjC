@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSArray *dice;
 @property (nonatomic) NSMutableArray *holdDice;
-@property (nonatomic) NSMutableDictionary *dictionaryHoldDice;
+@property (nonatomic) NSMutableDictionary *dictionaryHeldDice;
 
 
 @end
