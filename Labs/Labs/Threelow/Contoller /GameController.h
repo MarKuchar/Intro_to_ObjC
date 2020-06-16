@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Dice;
+#import "Dice.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GameController : NSObject
 
-@property (nonatomic) NSArray *dices;
-@property (nonatomic) NSMutableArray *holdDices;
+@property (nonatomic) NSArray *dice;
+@property (nonatomic) NSMutableArray *holdDice;
+@property (nonatomic) NSMutableDictionary *dictionaryHoldDice;
 
 
 @end

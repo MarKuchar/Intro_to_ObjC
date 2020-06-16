@@ -20,14 +20,13 @@ int main(int argc, const char * argv[]) {
         Dice *sixth = [[Dice alloc] init];
         
         GameController *gameController = [[GameController alloc] init];
-        gameController.dices = @[first, second, third, fourth, fifth, sixth];
+        gameController.dice = @[first, second, third, fourth, fifth, sixth];
         
 
         NSLog(@"%lu", first.currentValue);
         NSLog(@"%lu", second.currentValue);
         NSLog(@"%lu", third.currentValue);
         
-        NSInteger play = 1;
         while (1) {
             char arrayOfChar[255];
             printf("Enter your option.\n");
@@ -35,7 +34,7 @@ int main(int argc, const char * argv[]) {
             NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
             if ([input isEqualToString:@"roll"]) {
-                for (Dice* dice in gameController.dices) {
+                for (Dice* dice in gameController.dice) {
                     [dice randomizeDiceValue];
                     NSLog(@"%lu", dice.currentValue);
                 }

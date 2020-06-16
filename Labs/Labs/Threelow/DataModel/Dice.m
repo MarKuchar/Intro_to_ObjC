@@ -10,8 +10,8 @@
 
 @implementation Dice
 
-- (DiceValue) randomizeDiceValue {
-    _currentValue = (DiceValue) arc4random_uniform(7);
+- (NSUInteger) randomizeDiceValue {
+    _currentValue = arc4random_uniform(6) + 1;
     return _currentValue;
 }
 
@@ -20,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        _currentValue = (DiceValue) arc4random_uniform(7);
+        _currentValue = arc4random_uniform(6) + 1;
     }
     return self;
 }

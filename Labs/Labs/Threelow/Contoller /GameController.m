@@ -10,4 +10,8 @@
 
 @implementation GameController
 
+- (void) holdDie: (NSInteger *) dice {
+    [_dictionaryHoldDice setObject:[_dice objectAtIndex: (long)dice] forKey:[NSString stringWithFormat:@"%lu", (long)dice]];
+}
+
 @end
