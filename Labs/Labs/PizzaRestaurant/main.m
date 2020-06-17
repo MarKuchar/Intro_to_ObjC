@@ -36,7 +36,8 @@ int main(int argc, const char * argv[])
             NSString *size = [[commandWords objectAtIndex:0] capitalizedString];
             NSArray *toppings = [commandWords subarrayWithRange:NSMakeRange(1, [commandWords count] - 1)];
             // And then send some message to the kitchen...
-            
+            Pizza *pizza = [[Pizza alloc] initWithSize:size andToppings:toppings];
+            NSLog(@"%@", pizza);
         }
 
     }

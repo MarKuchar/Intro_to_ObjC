@@ -10,27 +10,33 @@
 
 @implementation Pizza
 
-- (NSUInteger) sizeOfPizza {
-    switch (_size) {
-        case Small:
-            return 30;
-        case Medium:
-           return 30;
-        case Large:
-            return 30;
+- (PizzaSize) sizeOfPizza: (NSString *) stringPizzaSize {
+    if ([stringPizzaSize isEqualToString:@"Small"]) {
+        return Small;
+    } else if ([stringPizzaSize isEqualToString:@"Medium"]) {
+        return Medium;
+    } else if ([stringPizzaSize isEqualToString:@"Large"]) {
+        return Large;
+    } else {
+        return NULL;
     }
+    
 }
 
 - (NSArray *) toppingOnPizza {
     return NULL;
 }
 
-- (instancetype)initWithSize: (PizzaSize) size andToppings: (NSArray *) toppings {
+- (instancetype)initWithSize: (NSString *) size andToppings: (NSArray *) toppings {
     if (self = [super init]) {
-        _size = size;
-        [self sizeOfPizza];
+        _size = [self sizeOfPizza: size];
+        _toppings = toppings;
     }
     return self;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"Pizza with %lu size and toppings: %@", _size, _toppings];
 }
 
 @end
