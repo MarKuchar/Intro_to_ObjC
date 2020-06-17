@@ -15,7 +15,6 @@
     return _currentValue;
 }
 
-
 - (instancetype)init
 {
     self = [super init];

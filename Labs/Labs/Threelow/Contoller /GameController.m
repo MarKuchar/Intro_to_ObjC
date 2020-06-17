@@ -30,9 +30,6 @@
     } else {
         [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
     }
-    if (_setHeldDice) {
-        NSLog(@"%lu", [_setHeldDice count]);
-    }
 }
 
 - (NSUInteger) countScore {

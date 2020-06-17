@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GameController : NSObject
 
 @property (nonatomic) NSArray *dice;
-@property (nonatomic) NSMutableArray *heldDice;
 @property (nonatomic) NSMutableSet *setHeldDice;
 @property (nonatomic) NSInteger score;
 
