@@ -12,20 +12,27 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        Dice *first = [[Dice alloc] init];
+        Dice *second = [[Dice alloc] init];
+        Dice *third = [[Dice alloc] init];
+        Dice *fourth = [[Dice alloc] init];
+        Dice *fifth = [[Dice alloc] init];
+        Dice *sixth = [[Dice alloc] init];
+        _dice = @[first, second, third, fourth, fifth, sixth];
         _setHeldDice = [NSMutableSet new];
     }
     return self;
 }
 
 - (void) holdDie: (NSInteger) dice {
-    Dice *heldDice = [_dice objectAtIndex: dice - 1];
-    [_heldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
-    [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
-//    [_dictionaryHeldDice setObject:[_dice objectAtIndex: dice - 1] forKey:[NSNumber numberWithLong: dice]];
+    if ([_setHeldDice containsObject:[NSString stringWithFormat:@"%lu", dice - 1]]) {
+        [_setHeldDice removeObject:[NSString stringWithFormat:@"%lu", dice - 1]];
+    } else {
+        [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
+    }
     if (_setHeldDice) {
         NSLog(@"%lu", [_setHeldDice count]);
     }
-    NSLog(@"%lu", [_heldDice count]);
 }
 
 - (NSUInteger) countScore {
@@ -42,6 +49,10 @@
     fgets(arrayOfChar, 255, stdin);
     NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return input;
+}
+
+- (void) resetDice {
+    [_setHeldDice removeAllObjects];
 }
 
 @end

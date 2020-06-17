@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @interface Dice : NSObject
 
 @property (nonatomic) NSUInteger currentValue;
+@property (nonatomic) NSDictionary *dictionary;
 
 - (NSUInteger) randomizeDiceValue;
 

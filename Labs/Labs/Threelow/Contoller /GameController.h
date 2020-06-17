@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSUInteger) countScore;
 - (void) holdDie: (NSInteger) dice;
 - (NSString *) userInput: (NSString *) promt;
+- (void) resetDice;
 
 
 @end

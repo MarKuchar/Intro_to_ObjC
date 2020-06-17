@@ -12,36 +12,38 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Dice *first = [[Dice alloc] init];
-        Dice *second = [[Dice alloc] init];
-        Dice *third = [[Dice alloc] init];
-        Dice *fourth = [[Dice alloc] init];
-        Dice *fifth = [[Dice alloc] init];
-        Dice *sixth = [[Dice alloc] init];
-        
         GameController *gameController = [[GameController alloc] init];
-        gameController.dice = @[first, second, third, fourth, fifth, sixth];
-
         NSString *diceSet = [NSString new];
+        NSUInteger rollCount = 0;
         
         while (1) {
             NSString *input = [gameController userInput:@"Enter the option."];
             diceSet = @"";
-            
             if ([input isEqualToString:@"roll"]) {
+                rollCount += 1;
                 for (Dice* dice in gameController.dice) {
-                        
-                    if ([gameController.setHeldDice containsObject:[NSString stringWithFormat:@"%lu", [gameController.dice indexOfObject:dice]]]) {
-                        diceSet = [diceSet stringByAppendingFormat:@"[%lu] ", dice.currentValue];
+                    if (rollCount == 5) {
+                        diceSet = [diceSet stringByAppendingFormat:@"[%@] ", [dice.dictionary objectForKey: [NSNumber numberWithLong:dice.currentValue]]];
+                    } else if ([gameController.setHeldDice containsObject:[NSString stringWithFormat:@"%lu", [gameController.dice indexOfObject:dice]]]) {
+                        diceSet = [diceSet stringByAppendingFormat:@"[%@] ", [dice.dictionary objectForKey: [NSNumber numberWithLong:dice.currentValue]]];
                     } else {
                         [dice randomizeDiceValue];
-                        diceSet = [diceSet stringByAppendingFormat:@"%lu ", dice.currentValue];
+                        diceSet = [diceSet stringByAppendingFormat:@"%@ ", [dice.dictionary objectForKey: [NSNumber numberWithLong:dice.currentValue]]];
                     }
                 }
-                printf("%s  ----> current score:%lu\n", [diceSet UTF8String], gameController.countScore);
+                if (rollCount == 5) {
+                    printf("\n*****GAME OVER*****\n");
+                    printf("\n%s\nFinal Score -----------> %lu\nTotal number of rolls -> %lu\n\n",
+                           [diceSet UTF8String], gameController.countScore, rollCount);
+                    break;
+                }
+                printf("\n%s\nCurrent score ---> %lu\nNumber of rolls -> %lu\n\n", [diceSet UTF8String], gameController.countScore, rollCount);
             } else if ([input isEqualToString:@"hold"]) {
                 NSString *heldDie = [gameController userInput:@"Enter die to be held."];
                 [gameController holdDie:[heldDie intValue]];
+            } else if ([input isEqualToString:@"reset"]) {
+                [gameController resetDice];
+                rollCount = 0;
             }
         }
     }

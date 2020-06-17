@@ -8,8 +8,8 @@
 
 #import "Dice.h"
 
-@implementation Dice
-
+@implementation Dice 
+    
 - (NSUInteger) randomizeDiceValue {
     _currentValue = arc4random_uniform(6) + 1;
     return _currentValue;
@@ -20,6 +20,10 @@
 {
     self = [super init];
     if (self) {
+        _dictionary = [[NSDictionary alloc] initWithObjectsAndKeys: @"⚀", [NSNumber numberWithInt: 1],
+        @"⚁", [NSNumber numberWithInt: 2], @"⚂", [NSNumber numberWithInt: 3],
+        @"⚃", [NSNumber numberWithInt: 4], @"⚄", [NSNumber numberWithInt: 5],
+        @"⚅", [NSNumber numberWithInt: 6], nil];
         _currentValue = arc4random_uniform(6) + 1;
     }
     return self;
