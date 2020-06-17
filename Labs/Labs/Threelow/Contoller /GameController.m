@@ -18,9 +18,23 @@
 
 - (void) holdDie: (NSInteger) dice {
     Dice *heldDice = [_dice objectAtIndex: dice - 1];
-    [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice]];
+    [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
 //    [_dictionaryHeldDice setObject:[_dice objectAtIndex: dice - 1] forKey:[NSNumber numberWithLong: dice]];
-//    NSLog(@"%lu", [_setHeldDice count]);
+    if (_setHeldDice) {
+        NSLog(@"%lu", [_setHeldDice count]);
+    }
+}
+
+- (NSUInteger) countScore {
+    _score = 0;
+    for (Dice *dice in _dice) {
+        _score += dice.currentValue;
+    }
+    return _score;
+}
+
+- (NSString) userInput {
+    
 }
 
 @end

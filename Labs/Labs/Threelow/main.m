@@ -45,15 +45,15 @@ int main(int argc, const char * argv[]) {
                         diceSet = [diceSet stringByAppendingFormat:@"%lu ", dice.currentValue];
                     }
                 }
+                printf("%s  ----> current score:%lu\n", [diceSet UTF8String], gameController.countScore);
             } else if ([input isEqualToString:@"hold"]) {
                 printf("Enter die to be held.\n");
                 fgets(arrayOfChar, 255, stdin);
                 NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                [setHeldDice addObject:[NSString stringWithFormat:@"%@", input]];
+                [setHeldDice addObject:[NSString stringWithFormat:@"%d", [input intValue] - 1]];
                 [gameController holdDie:[input intValue]];
             }
             NSLog(@"%lu", [setHeldDice count]);
-            printf("%s\n", [diceSet UTF8String]);
         }
     }
     return 0;

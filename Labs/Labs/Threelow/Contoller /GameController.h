@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSArray *dice;
 @property (nonatomic) NSMutableArray *heldDice;
 @property (nonatomic) NSMutableSet *setHeldDice;
+@property (nonatomic) NSInteger score;
 
+
+- (NSUInteger) countScore;
 - (void) holdDie: (NSInteger) dice;
 
 
