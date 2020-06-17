@@ -33,8 +33,12 @@
     return _score;
 }
 
-- (NSString) userInput {
-    
+- (NSString *) userInput: (NSString *) promt {
+    char arrayOfChar[255];
+    printf("%s\n", [promt UTF8String]);
+    fgets(arrayOfChar, 255, stdin);
+    NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return input;
 }
 
 @end

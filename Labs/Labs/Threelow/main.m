@@ -28,11 +28,7 @@ int main(int argc, const char * argv[]) {
         NSString *diceSet = [NSString new];
         
         while (1) {
-            char arrayOfChar[255];
-            printf("Enter your option.\n");
-            fgets(arrayOfChar, 255, stdin);
-            NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            
+            NSString *input = [gameController userInput:@"Enter the option."];
             diceSet = @"";
             
             if ([input isEqualToString:@"roll"]) {
@@ -47,11 +43,9 @@ int main(int argc, const char * argv[]) {
                 }
                 printf("%s  ----> current score:%lu\n", [diceSet UTF8String], gameController.countScore);
             } else if ([input isEqualToString:@"hold"]) {
-                printf("Enter die to be held.\n");
-                fgets(arrayOfChar, 255, stdin);
-                NSString *input = [[NSString stringWithUTF8String:arrayOfChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                [setHeldDice addObject:[NSString stringWithFormat:@"%d", [input intValue] - 1]];
-                [gameController holdDie:[input intValue]];
+                NSString *heldDie = [gameController userInput:@"Enter die to be held."];
+                [setHeldDice addObject:[NSString stringWithFormat:@"%d", [heldDie intValue] - 1]];
+                [gameController holdDie:[heldDie intValue]];
             }
             NSLog(@"%lu", [setHeldDice count]);
         }
