@@ -10,9 +10,17 @@
 
 @implementation GameController
 
-- (void) holdDie: (NSInteger *) dice {
-    Dice *heldDice = [_dice objectAtIndex: (long)dice];
-    [_dictionaryHeldDice setObject:[NSString stringWithFormat:@"[%lu]", heldDice.currentValue] forKey:[NSNumber numberWithInteger: (long) dice]];
+- (instancetype)init {
+    if (self = [super init]) {
+    }
+    return self;
+}
+
+- (void) holdDie: (NSInteger) dice {
+    Dice *heldDice = [_dice objectAtIndex: dice - 1];
+    [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice]];
+//    [_dictionaryHeldDice setObject:[_dice objectAtIndex: dice - 1] forKey:[NSNumber numberWithLong: dice]];
+//    NSLog(@"%lu", [_setHeldDice count]);
 }
 
 @end
