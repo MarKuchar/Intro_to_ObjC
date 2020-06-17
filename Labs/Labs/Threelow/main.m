@@ -21,9 +21,6 @@ int main(int argc, const char * argv[]) {
         
         GameController *gameController = [[GameController alloc] init];
         gameController.dice = @[first, second, third, fourth, fifth, sixth];
-        
-        NSMutableSet *setHeldDice = [[NSMutableSet alloc] init];
-        
 
         NSString *diceSet = [NSString new];
         
@@ -34,7 +31,7 @@ int main(int argc, const char * argv[]) {
             if ([input isEqualToString:@"roll"]) {
                 for (Dice* dice in gameController.dice) {
                         
-                    if ([setHeldDice containsObject:[NSString stringWithFormat:@"%lu", [gameController.dice indexOfObject:dice]]]) {
+                    if ([gameController.setHeldDice containsObject:[NSString stringWithFormat:@"%lu", [gameController.dice indexOfObject:dice]]]) {
                         diceSet = [diceSet stringByAppendingFormat:@"[%lu] ", dice.currentValue];
                     } else {
                         [dice randomizeDiceValue];
@@ -44,10 +41,8 @@ int main(int argc, const char * argv[]) {
                 printf("%s  ----> current score:%lu\n", [diceSet UTF8String], gameController.countScore);
             } else if ([input isEqualToString:@"hold"]) {
                 NSString *heldDie = [gameController userInput:@"Enter die to be held."];
-                [setHeldDice addObject:[NSString stringWithFormat:@"%d", [heldDie intValue] - 1]];
                 [gameController holdDie:[heldDie intValue]];
             }
-            NSLog(@"%lu", [setHeldDice count]);
         }
     }
     return 0;

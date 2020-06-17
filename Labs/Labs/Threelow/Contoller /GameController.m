@@ -12,17 +12,20 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        _setHeldDice = [NSMutableSet new];
     }
     return self;
 }
 
 - (void) holdDie: (NSInteger) dice {
     Dice *heldDice = [_dice objectAtIndex: dice - 1];
+    [_heldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
     [_setHeldDice addObject:[NSString stringWithFormat:@"%lu", dice - 1]];
 //    [_dictionaryHeldDice setObject:[_dice objectAtIndex: dice - 1] forKey:[NSNumber numberWithLong: dice]];
     if (_setHeldDice) {
         NSLog(@"%lu", [_setHeldDice count]);
     }
+    NSLog(@"%lu", [_heldDice count]);
 }
 
 - (NSUInteger) countScore {
