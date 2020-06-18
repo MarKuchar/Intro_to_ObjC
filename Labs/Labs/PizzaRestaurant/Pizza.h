@@ -12,8 +12,8 @@ typedef NS_ENUM(NSInteger, PizzaSize) {
 
 - (instancetype)initWithSize: (PizzaSize) size andToppings: (NSArray *) toppings;
 + (PizzaSize)sizeFromString: (NSString *) stringSize;
-+(Pizza *)meatLoversWithSize: (PizzaSize)size;
-+(Pizza *)largePepperoni;
++ (Pizza *)meatLoversWithSize: (PizzaSize)size;
++ (Pizza *)largePepperoni;
 
 
 @end
