@@ -12,6 +12,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        _setHeldDice = [NSMutableSet new];
         Dice *first = [[Dice alloc] init];
         Dice *second = [[Dice alloc] init];
         Dice *third = [[Dice alloc] init];
@@ -19,7 +20,6 @@
         Dice *fifth = [[Dice alloc] init];
         Dice *sixth = [[Dice alloc] init];
         _dice = @[first, second, third, fourth, fifth, sixth];
-        _setHeldDice = [NSMutableSet new];
     }
     return self;
 }

@@ -12,18 +12,21 @@
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings {
     if (![_delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
+        NSLog(@"Order was not confirmed.");
         return NULL;
     } else if ([_delegate kitchenShouldUpgradeOrder:self]) {
         Pizza *pizza = [[Pizza alloc] initWithSize:Large andToppings:toppings];
         if ([_delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
             [_delegate kitchenDidMakePizza:pizza];
         }
+        NSLog(@"%@", pizza);
         return pizza;
     } else {
         Pizza *pizza = [[Pizza alloc] initWithSize:size andToppings:toppings];
         if ([_delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
             [_delegate kitchenDidMakePizza:pizza];
         }
+        NSLog(@"%@", pizza);
         return pizza;
     }
 }
@@ -36,6 +39,16 @@
         return [Pizza meatLoversWithSize:size];
     }
     return NULL;
+}
+
++ (NSString *)waiter: (NSString *) promt {
+    NSLog(@"%@", promt);
+    NSLog(@"> ");
+    char str[100];
+    fgets (str, 100, stdin);
+    NSString *inputString = [[NSString alloc] initWithUTF8String:str];
+    inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return inputString;
 }
 
 @end

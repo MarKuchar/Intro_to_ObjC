@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		952488E9248EF51A00F7F002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 952488E8248EF51A00F7F002 /* main.m */; };
+		95391F0F249C0C9000F537A6 /* HateAnchoviesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95391F0E249C0C9000F537A6 /* HateAnchoviesManager.m */; };
+		95391F12249C11E400F537A6 /* NiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95391F11249C11E400F537A6 /* NiceManager.m */; };
+		95598AEC249A81BD00A27D30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95598AE8249A81BD00A27D30 /* main.m */; };
+		95598AED249A81BD00A27D30 /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 95598AEA249A81BD00A27D30 /* Kitchen.m */; };
+		95598AF3249A8FE900A27D30 /* Pizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 95598AF2249A8FE900A27D30 /* Pizza.m */; };
 		95AF7568249034CB00926C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF7567249034CB00926C7B /* main.m */; };
 		95AF756E249039D400926C7B /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF756D249039D400926C7B /* Box.m */; };
 		95AF757624904CA700926C7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF757524904CA700926C7B /* main.m */; };
@@ -34,10 +39,22 @@
 		95F0D0B62492DC92004FB288 /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0B52492DC92004FB288 /* Cook.m */; };
 		95F0D0B82492DF20004FB288 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0B72492DF20004FB288 /* main.m */; };
 		95F0D0BB2492E41D004FB288 /* Charge.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F0D0BA2492E41D004FB288 /* Charge.m */; };
+		95F3C3E32498256100FBB37D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F3C3E22498256100FBB37D /* main.m */; };
+		95F3C3E9249825BC00FBB37D /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F3C3E8249825BC00FBB37D /* Dice.m */; };
+		95F3C3EC249835E000FBB37D /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F3C3EB249835E000FBB37D /* GameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		952488E3248EF51A00F7F002 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		95598AD9249A810200A27D30 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -91,6 +108,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		95F3C3DE2498256100FBB37D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +124,16 @@
 		9510995924954D8200F8F77C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		952488E5248EF51A00F7F002 /* Lab1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab1; sourceTree = BUILT_PRODUCTS_DIR; };
 		952488E8248EF51A00F7F002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95391F0D249C0C9000F537A6 /* HateAnchoviesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HateAnchoviesManager.h; sourceTree = "<group>"; };
+		95391F0E249C0C9000F537A6 /* HateAnchoviesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HateAnchoviesManager.m; sourceTree = "<group>"; };
+		95391F10249C11E400F537A6 /* NiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NiceManager.h; sourceTree = "<group>"; };
+		95391F11249C11E400F537A6 /* NiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiceManager.m; sourceTree = "<group>"; };
+		95598ADB249A810200A27D30 /* PizzaRestaurant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PizzaRestaurant; sourceTree = BUILT_PRODUCTS_DIR; };
+		95598AE8249A81BD00A27D30 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95598AE9249A81BD00A27D30 /* Kitchen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kitchen.h; sourceTree = "<group>"; };
+		95598AEA249A81BD00A27D30 /* Kitchen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
+		95598AF1249A8FE900A27D30 /* Pizza.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pizza.h; sourceTree = "<group>"; };
+		95598AF2249A8FE900A27D30 /* Pizza.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pizza.m; sourceTree = "<group>"; };
 		95AF7565249034CB00926C7B /* Lab2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab2; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AF7567249034CB00926C7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95AF756C249039D400926C7B /* Box.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
@@ -150,10 +186,23 @@
 		95F0D0B72492DF20004FB288 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95F0D0B92492E41D004FB288 /* Charge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Charge.h; sourceTree = "<group>"; };
 		95F0D0BA2492E41D004FB288 /* Charge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Charge.m; sourceTree = "<group>"; };
+		95F3C3E02498256100FBB37D /* Threelow */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Threelow; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F3C3E22498256100FBB37D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95F3C3E7249825BC00FBB37D /* Dice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
+		95F3C3E8249825BC00FBB37D /* Dice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
+		95F3C3EA249835E000FBB37D /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		95F3C3EB249835E000FBB37D /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		952488E2248EF51A00F7F002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95598AD8249A810200A27D30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,6 +244,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95F3C3DD2498256100FBB37D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -216,6 +272,8 @@
 				95C7932F2491881700C24FBD /* Lab13 */,
 				95C5D21B2492CA7E00BDAB77 /* Lab9 */,
 				95D35FF024958B1D007F0784 /* Payments */,
+				95F3C3E12498256100FBB37D /* Threelow */,
+				95598ADC249A810200A27D30 /* PizzaRestaurant */,
 				952488E6248EF51A00F7F002 /* Products */,
 				9510995624954D6C00F8F77C /* Frameworks */,
 			);
@@ -230,6 +288,8 @@
 				95C7932E2491881700C24FBD /* Lab13 */,
 				95C5D21A2492CA7E00BDAB77 /* Lab9 */,
 				95D35FEF24958B1D007F0784 /* Payments */,
+				95F3C3E02498256100FBB37D /* Threelow */,
+				95598ADB249A810200A27D30 /* PizzaRestaurant */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +300,22 @@
 				952488E8248EF51A00F7F002 /* main.m */,
 			);
 			path = Lab1;
+			sourceTree = "<group>";
+		};
+		95598ADC249A810200A27D30 /* PizzaRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				95598AE9249A81BD00A27D30 /* Kitchen.h */,
+				95598AEA249A81BD00A27D30 /* Kitchen.m */,
+				95598AE8249A81BD00A27D30 /* main.m */,
+				95598AF1249A8FE900A27D30 /* Pizza.h */,
+				95598AF2249A8FE900A27D30 /* Pizza.m */,
+				95391F0D249C0C9000F537A6 /* HateAnchoviesManager.h */,
+				95391F0E249C0C9000F537A6 /* HateAnchoviesManager.m */,
+				95391F10249C11E400F537A6 /* NiceManager.h */,
+				95391F11249C11E400F537A6 /* NiceManager.m */,
+			);
+			path = PizzaRestaurant;
 			sourceTree = "<group>";
 		};
 		95AF7566249034CB00926C7B /* Lab2 */ = {
@@ -356,6 +432,34 @@
 			path = Payments;
 			sourceTree = "<group>";
 		};
+		95F3C3E12498256100FBB37D /* Threelow */ = {
+			isa = PBXGroup;
+			children = (
+				95F3C3EE2498385700FBB37D /* Contoller  */,
+				95F3C3ED2498384900FBB37D /* DataModel */,
+				95F3C3E22498256100FBB37D /* main.m */,
+			);
+			path = Threelow;
+			sourceTree = "<group>";
+		};
+		95F3C3ED2498384900FBB37D /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				95F3C3E7249825BC00FBB37D /* Dice.h */,
+				95F3C3E8249825BC00FBB37D /* Dice.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		95F3C3EE2498385700FBB37D /* Contoller  */ = {
+			isa = PBXGroup;
+			children = (
+				95F3C3EA249835E000FBB37D /* GameController.h */,
+				95F3C3EB249835E000FBB37D /* GameController.m */,
+			);
+			path = "Contoller ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +478,23 @@
 			name = Lab1;
 			productName = Labs;
 			productReference = 952488E5248EF51A00F7F002 /* Lab1 */;
+			productType = "com.apple.product-type.tool";
+		};
+		95598ADA249A810200A27D30 /* PizzaRestaurant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95598AE1249A810200A27D30 /* Build configuration list for PBXNativeTarget "PizzaRestaurant" */;
+			buildPhases = (
+				95598AD7249A810200A27D30 /* Sources */,
+				95598AD8249A810200A27D30 /* Frameworks */,
+				95598AD9249A810200A27D30 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PizzaRestaurant;
+			productName = PizzaRestaurant;
+			productReference = 95598ADB249A810200A27D30 /* PizzaRestaurant */;
 			productType = "com.apple.product-type.tool";
 		};
 		95AF7564249034CB00926C7B /* Lab2 */ = {
@@ -461,6 +582,23 @@
 			productReference = 95D35FEF24958B1D007F0784 /* Payments */;
 			productType = "com.apple.product-type.tool";
 		};
+		95F3C3DF2498256100FBB37D /* Threelow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F3C3E62498256100FBB37D /* Build configuration list for PBXNativeTarget "Threelow" */;
+			buildPhases = (
+				95F3C3DC2498256100FBB37D /* Sources */,
+				95F3C3DD2498256100FBB37D /* Frameworks */,
+				95F3C3DE2498256100FBB37D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Threelow;
+			productName = Threelow;
+			productReference = 95F3C3E02498256100FBB37D /* Threelow */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -471,6 +609,9 @@
 				ORGANIZATIONNAME = "Martin Kuchar";
 				TargetAttributes = {
 					952488E4248EF51A00F7F002 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					95598ADA249A810200A27D30 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 					95AF7564249034CB00926C7B = {
@@ -486,6 +627,9 @@
 						CreatedOnToolsVersion = 11.5;
 					};
 					95D35FEE24958B1D007F0784 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					95F3C3DF2498256100FBB37D = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -506,9 +650,11 @@
 				952488E4248EF51A00F7F002 /* Lab1 */,
 				95AF7564249034CB00926C7B /* Lab2 */,
 				95C5D2192492CA7E00BDAB77 /* Lab9 */,
-				95AF757224904CA700926C7B /* Maths */,
 				95C7932D2491881700C24FBD /* Lab13 */,
+				95AF757224904CA700926C7B /* Maths */,
 				95D35FEE24958B1D007F0784 /* Payments */,
+				95F3C3DF2498256100FBB37D /* Threelow */,
+				95598ADA249A810200A27D30 /* PizzaRestaurant */,
 			);
 		};
 /* End PBXProject section */
@@ -519,6 +665,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				952488E9248EF51A00F7F002 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95598AD7249A810200A27D30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95598AF3249A8FE900A27D30 /* Pizza.m in Sources */,
+				95598AED249A81BD00A27D30 /* Kitchen.m in Sources */,
+				95391F0F249C0C9000F537A6 /* HateAnchoviesManager.m in Sources */,
+				95391F12249C11E400F537A6 /* NiceManager.m in Sources */,
+				95598AEC249A81BD00A27D30 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +738,16 @@
 				95D360042495A63D007F0784 /* ApplePaymentService.m in Sources */,
 				95D35FFB2495966B007F0784 /* PaypalPaymentService.m in Sources */,
 				95D35FFE2495967B007F0784 /* StripePaymentService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F3C3DC2498256100FBB37D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F3C3EC249835E000FBB37D /* GameController.m in Sources */,
+				95F3C3E9249825BC00FBB37D /* Dice.m in Sources */,
+				95F3C3E32498256100FBB37D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +883,26 @@
 			};
 			name = Release;
 		};
+		95598ADF249A810200A27D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PC4J6W84S8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95598AE0249A810200A27D30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PC4J6W84S8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		95AF756A249034CB00926C7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -798,6 +986,7 @@
 		95D35FF324958B1D007F0784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PC4J6W84S8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -806,6 +995,27 @@
 			name = Debug;
 		};
 		95D35FF424958B1D007F0784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PC4J6W84S8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		95F3C3E42498256100FBB37D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PC4J6W84S8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95F3C3E52498256100FBB37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -832,6 +1042,15 @@
 			buildConfigurations = (
 				952488ED248EF51A00F7F002 /* Debug */,
 				952488EE248EF51A00F7F002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95598AE1249A810200A27D30 /* Build configuration list for PBXNativeTarget "PizzaRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95598ADF249A810200A27D30 /* Debug */,
+				95598AE0249A810200A27D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -877,6 +1096,15 @@
 			buildConfigurations = (
 				95D35FF324958B1D007F0784 /* Debug */,
 				95D35FF424958B1D007F0784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F3C3E62498256100FBB37D /* Build configuration list for PBXNativeTarget "Threelow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F3C3E42498256100FBB37D /* Debug */,
+				95F3C3E52498256100FBB37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

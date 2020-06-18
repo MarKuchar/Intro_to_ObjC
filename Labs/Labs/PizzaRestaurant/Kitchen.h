@@ -23,13 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-
 @interface Kitchen : NSObject
 
 @property (nonatomic, weak) id<KitchenDelegate> delegate;
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings;
 - (Pizza *)makeCustomPizza:(PizzaSize)size customtype:(NSString *) customPizza;
++ (NSString *)waiter: (NSString *) promt;
 
 
 @end
