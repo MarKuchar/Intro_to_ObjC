@@ -12,6 +12,7 @@
 @interface Kitchen : NSObject
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings;
+- (Pizza *)makeCustomPizza:(PizzaSize)size customtype:(NSString *) customPizza;
 
 
 @end

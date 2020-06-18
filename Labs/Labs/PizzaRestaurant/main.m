@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Kitchen.h"
+#import "Pizza.h"
 
 int main(int argc, const char * argv[])
 {
@@ -30,15 +31,16 @@ int main(int argc, const char * argv[])
             
             NSLog(@"Input was %@", inputString);
             
-            if ([inputString isEqualToString:@"pepperoni"]) {
-                
-            }
-            
             // Take the first word of the command as the size, and the rest as the toppings
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
-            PizzaSize size = (PizzaSize) [[commandWords objectAtIndex:0] capitalizedString];
             NSArray *toppings = [commandWords subarrayWithRange:NSMakeRange(1, [commandWords count] - 1)];
+            PizzaSize size = [Pizza sizeFromString:[[commandWords objectAtIndex:0] capitalizedString]];
             
+            if ([inputString isEqualToString:@"pepperoni"]) {
+                [restaurantKitchen makeCustomPizza:Large customtype:@"pepperoni"];
+            } else if ([[commandWords objectAtIndex:1] isEqualToString:@"meatlovers"]) {
+                [restaurantKitchen makeCustomPizza:size customtype:@"meatlovers"];
+            }
             // And then send some message to the kitchen...
             [restaurantKitchen makePizzaWithSize:size toppings:toppings];
         }

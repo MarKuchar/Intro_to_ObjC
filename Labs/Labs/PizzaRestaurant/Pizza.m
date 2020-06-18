@@ -38,17 +38,25 @@
 }
 
 +(Pizza *)largePepperoni {
-    return [[self alloc] initWithSize:Large andToppings:[NSArray arrayWithObjects: @"Pepperoni", @"Cheese", nil]];
+    return [[Pizza alloc] initWithSize:Large andToppings:[NSArray arrayWithObjects: @"Pepperoni", @"Cheese", nil]];
 }
 
 +(Pizza *)meatLoversWithSize: (PizzaSize)size {
-    return [[self alloc] initWithSize:size andToppings:[NSArray arrayWithObjects: @"Grind Beef", @"Chicken", @"Bacon", nil]];
+    return [[Pizza alloc] initWithSize:size andToppings:[NSArray arrayWithObjects: @"Grind Beef", @"Chicken", @"Bacon", nil]];
 }
-
-
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"Pizza with %lu size and toppings: %@", _size, _toppings];
+}
+
++ (PizzaSize)sizeFromString: (NSString *) stringSize {
+    if ([stringSize isEqualToString:@"Small"]) {
+        return Small;
+    } else if ([stringSize isEqualToString:@"Medium"]) {
+        return Medium;
+    } else {
+        return Large;
+    }
 }
 
 @end

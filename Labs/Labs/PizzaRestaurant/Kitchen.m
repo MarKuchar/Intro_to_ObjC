@@ -14,4 +14,14 @@
     return [[Pizza alloc] initWithSize:size andToppings:toppings];
 }
 
+- (Pizza *)makeCustomPizza:(PizzaSize)size customtype:(NSString *) customPizza {
+    if ([customPizza isEqualToString:@"pepperoni"]) {
+        return [Pizza largePepperoni];
+    } else if ([customPizza isEqualToString:@"meatlovers"]) {
+        NSLog(@"%@", [Pizza meatLoversWithSize:size]);
+        return [Pizza meatLoversWithSize:size];
+    }
+    return NULL;
+}
+
 @end
