@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Kitchen;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol KitchenDelegate <NSObject>
+
+- (BOOL)kitchen:(Kitchen *)kitchen shouldMakePizzaOfSize:(PizzaSize)size andToppings:(NSArray *)toppings;
+- (BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen;
+
+@optional
+- (void)kitchenDidMakePizza:(Pizza *)pizza;
 
 @end
 

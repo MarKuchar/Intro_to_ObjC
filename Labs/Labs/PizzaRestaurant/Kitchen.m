@@ -11,7 +11,21 @@
 @implementation Kitchen
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings {
-    return [[Pizza alloc] initWithSize:size andToppings:toppings];
+    if (![_delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
+        return NULL;
+    } else if ([_delegate kitchenShouldUpgradeOrder:self]) {
+        Pizza *pizza = [[Pizza alloc] initWithSize:Large andToppings:toppings];
+        if ([_delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
+            [_delegate kitchenDidMakePizza:pizza];
+        }
+        return pizza;
+    } else {
+        Pizza *pizza = [[Pizza alloc] initWithSize:size andToppings:toppings];
+        if ([_delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
+            [_delegate kitchenDidMakePizza:pizza];
+        }
+        return pizza;
+    }
 }
 
 - (Pizza *)makeCustomPizza:(PizzaSize)size customtype:(NSString *) customPizza {
