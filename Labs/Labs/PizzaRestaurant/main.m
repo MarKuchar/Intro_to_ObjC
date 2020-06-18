@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Pizza.h"
 #import "Kitchen.h"
 
 int main(int argc, const char * argv[])
@@ -31,13 +30,17 @@ int main(int argc, const char * argv[])
             
             NSLog(@"Input was %@", inputString);
             
+            if ([inputString isEqualToString:@"pepperoni"]) {
+                
+            }
+            
             // Take the first word of the command as the size, and the rest as the toppings
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
-            NSString *size = [[commandWords objectAtIndex:0] capitalizedString];
+            PizzaSize size = (PizzaSize) [[commandWords objectAtIndex:0] capitalizedString];
             NSArray *toppings = [commandWords subarrayWithRange:NSMakeRange(1, [commandWords count] - 1)];
+            
             // And then send some message to the kitchen...
-            Pizza *pizza = [[Pizza alloc] initWithSize:size andToppings:toppings];
-            NSLog(@"%@", pizza);
+            [restaurantKitchen makePizzaWithSize:size toppings:toppings];
         }
 
     }

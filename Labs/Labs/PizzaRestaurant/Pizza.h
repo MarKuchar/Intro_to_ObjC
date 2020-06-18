@@ -10,9 +10,7 @@ typedef NS_ENUM(NSInteger, PizzaSize) {
 
 @interface Pizza : NSObject
 
-@property (nonatomic) PizzaSize size;
-@property (nonatomic) NSArray *toppings;
-- (instancetype)initWithSize: (NSString *) size andToppings: (NSArray *) toppings;
+- (instancetype)initWithSize: (PizzaSize) size andToppings: (NSArray *) toppings;
 
 
 @end

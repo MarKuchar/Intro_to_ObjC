@@ -8,32 +8,44 @@
 
 #import "Pizza.h"
 
-@implementation Pizza
+@implementation Pizza {
+    NSInteger _size;
+    NSArray *_toppings;
+}
 
-- (PizzaSize) sizeOfPizza: (NSString *) stringPizzaSize {
-    if ([stringPizzaSize isEqualToString:@"Small"]) {
-        return Small;
-    } else if ([stringPizzaSize isEqualToString:@"Medium"]) {
-        return Medium;
-    } else if ([stringPizzaSize isEqualToString:@"Large"]) {
-        return Large;
-    } else {
-        return NULL;
-    }
-    
+
+- (NSInteger) sizeOfPizza: (PizzaSize) pizzaSize {
+    switch (pizzaSize) {
+        case Small:
+            return 8;
+        case Medium:
+            return 10;
+        case Large:
+            return 12;
+    }    
 }
 
 - (NSArray *) toppingOnPizza {
     return NULL;
 }
 
-- (instancetype)initWithSize: (NSString *) size andToppings: (NSArray *) toppings {
+- (instancetype)initWithSize: (PizzaSize) size andToppings: (NSArray *) toppings {
     if (self = [super init]) {
         _size = [self sizeOfPizza: size];
         _toppings = toppings;
     }
     return self;
 }
+
++(Pizza *)largePepperoni {
+    return [[self alloc] initWithSize:Large andToppings:[NSArray arrayWithObjects: @"Pepperoni", @"Cheese", nil]];
+}
+
++(Pizza *)meatLoversWithSize: (PizzaSize)size {
+    return [[self alloc] initWithSize:size andToppings:[NSArray arrayWithObjects: @"Grind Beef", @"Chicken", @"Bacon", nil]];
+}
+
+
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"Pizza with %lu size and toppings: %@", _size, _toppings];
