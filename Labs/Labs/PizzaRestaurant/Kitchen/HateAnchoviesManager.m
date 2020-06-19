@@ -18,4 +18,7 @@
     return false;
 }
 
+- (void)kitchenDidMakePizza:(Pizza *)pizza {}
+
+
 @end

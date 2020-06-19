@@ -20,8 +20,8 @@ int main(int argc, const char * argv[])
         Kitchen *restaurantKitchen = [Kitchen new];
         DeliveryService *deliveryService = [DeliveryService new];
         restaurantKitchen.deliveryDelegate = deliveryService;
-        NiceManager *niceManager = [NiceManager new];
-        HateAnchoviesManager *hateAnchoviesManager = [HateAnchoviesManager new];
+        NiceManager *niceManager;
+        HateAnchoviesManager *hateAnchoviesManager;
         
         while (TRUE) {
             // Loop forever
@@ -31,8 +31,14 @@ int main(int argc, const char * argv[])
             NSString *managerChoiceInputString = [Kitchen waiter:@"Please what manager do you want tu use?\n1. Nice Manager 2. Hate Anchovies Manager 3. No manager"];
             
             if ([managerChoiceInputString isEqualToString:@"1"]) {
+                if (niceManager == nil) {
+                    niceManager = [NiceManager new];
+                }
                 restaurantKitchen.kitchenDelegate = niceManager;
             } else if ([managerChoiceInputString isEqualToString:@"2"]) {
+                if (hateAnchoviesManager == nil) {
+                    hateAnchoviesManager = [HateAnchoviesManager new];
+                }
                 restaurantKitchen.kitchenDelegate = hateAnchoviesManager;
             }
             // Take the first word of the command as the size, and the rest as the toppings
