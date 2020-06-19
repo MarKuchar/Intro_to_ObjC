@@ -11,14 +11,14 @@
 #import "Kitchen.h"
 #import "Pizza.h"
 #import "HateAnchoviesManager.h"
-#import "NiceManager.h"
+#import "DeliveryManager.h"
 
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
         
         Kitchen *restaurantKitchen = [Kitchen new];
-        NiceManager *niceManager = [NiceManager new];
+        DeliveryManager *niceManager = [DeliveryManager new];
         HateAnchoviesManager *hateAnchoviesManager = [HateAnchoviesManager new];
         
         while (TRUE) {

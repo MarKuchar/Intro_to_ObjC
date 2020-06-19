@@ -6,9 +6,20 @@
 //  Copyright © 2020 Martin Kuchar. All rights reserved.
 //
 
-#import "NiceManager.h"
+#import "DeliveryManager.h"
 
-@implementation NiceManager
+@implementation DeliveryManager {
+    DeliveryService *_deliveryService;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _deliveryService = [DeliveryService new];
+    }
+    return self;
+}
 
 - (BOOL)kitchen:(nonnull Kitchen *)kitchen shouldMakePizzaOfSize:(PizzaSize)size andToppings:(nonnull NSArray *)toppings {
     return true;
@@ -19,7 +30,8 @@
 }
 
 - (void)kitchenDidMakePizza:(Pizza *)pizza {
-    NSLog(@"As regular customer, you are being upgraded!");
+    [_deliveryService deliverPizza:pizza];
+    NSLog(@"Becasue you are eating in, you are being upgraded!");
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  NiceManager.h
+//  DeliveryCar.h
 //  PizzaRestaurant
 //
 //  Created by Martin Kuchar on 2020-06-18.
@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Kitchen.h"
+@class Pizza;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NiceManager : NSObject<KitchenDelegate>
+@interface DeliveryCar : NSObject
+
+- (void)deliverPizza:(Pizza *)pizza;
 
 @end
 
