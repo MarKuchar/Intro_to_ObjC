@@ -6,9 +6,9 @@
 //  Copyright © 2020 Martin Kuchar. All rights reserved.
 //
 
-#import "DeliveryManager.h"
+#import "NiceManager.h"
 
-@implementation DeliveryManager {
+@implementation NiceManager {
     DeliveryService *_deliveryService;
 }
 
@@ -30,8 +30,7 @@
 }
 
 - (void)kitchenDidMakePizza:(Pizza *)pizza {
-    [_deliveryService deliverPizza:pizza];
-    NSLog(@"Becasue you are eating in, you are being upgraded!");
+    NSLog(@"Becasue you are local, you are being upgraded!");
 }
 
 

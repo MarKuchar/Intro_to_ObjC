@@ -1,5 +1,5 @@
 //
-//  NiceManager.h
+//  Manager.h
 //  PizzaRestaurant
 //
 //  Created by Martin Kuchar on 2020-06-18.
@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Kitchen.h"
-#import "DeliveryService.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DeliveryManager : NSObject<KitchenDelegate>
+@interface Manager : NSObject
 
 @end
 

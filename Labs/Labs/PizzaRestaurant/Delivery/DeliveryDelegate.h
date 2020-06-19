@@ -1,5 +1,5 @@
 //
-//  DeliveryService.h
+//  DeliveryDelegate.h
 //  PizzaRestaurant
 //
 //  Created by Martin Kuchar on 2020-06-18.
@@ -7,17 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DeliveryCar.h"
-#import "DeliveryDelegate.h"
-
 @class Pizza;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DeliveryService : NSObject<DeliveryDelegate>
+@protocol DeliveryDelegate <NSObject>
 
-@property NSMutableArray *deliveredPizzas;
 - (void) deliverPizza:(Pizza *)pizza;
+
+@optional
 
 - (NSArray *)pizzaDescriptions;
 

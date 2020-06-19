@@ -17,16 +17,18 @@
     self = [super init];
     if (self) {
         _deliveryCar = [DeliveryCar new];
+        _deliveredPizzas = [NSMutableArray new];
     }
     return self;
 }
 
 - (void) deliverPizza:(Pizza *)pizza {
+    [_deliveredPizzas addObject:pizza];
     [_deliveryCar deliverPizza:pizza];
-    
 }
-//- (NSArray *)pizzaDescriptions{
-//    
-//}
+
+- (NSArray *)pizzaDescriptions {
+    return _deliveredPizzas;
+}
 
 @end

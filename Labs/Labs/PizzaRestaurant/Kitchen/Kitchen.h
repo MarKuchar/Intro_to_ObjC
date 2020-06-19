@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Pizza.h"
+#import "DeliveryDelegate.h"
 @class  Kitchen;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -22,10 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
 @interface Kitchen : NSObject
 
-@property (nonatomic, weak) id<KitchenDelegate> delegate;
+@property (nonatomic, weak) id<KitchenDelegate> kitchenDelegate;
+@property (nonatomic, weak) id<DeliveryDelegate> deliveryDelegate;
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings;
 - (Pizza *)makeCustomPizza:(PizzaSize)size customtype:(NSString *) customPizza;

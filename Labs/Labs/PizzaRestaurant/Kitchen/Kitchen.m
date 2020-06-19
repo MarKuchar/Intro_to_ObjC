@@ -11,22 +11,22 @@
 @implementation Kitchen
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings {
-    if (![_delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
+    if (![_kitchenDelegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
         NSLog(@"Order was not confirmed.");
         return NULL;
-    } else if ([_delegate kitchenShouldUpgradeOrder:self]) {
+    } else if ([_kitchenDelegate kitchenShouldUpgradeOrder:self]) {
         Pizza *pizza = [[Pizza alloc] initWithSize:Large andToppings:toppings];
-        if ([_delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
-            [_delegate kitchenDidMakePizza:pizza];
+        if ([_kitchenDelegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
+            [_kitchenDelegate kitchenDidMakePizza:pizza];
+            [_deliveryDelegate deliverPizza:pizza];
         }
-        NSLog(@"%@", pizza);
         return pizza;
     } else {
         Pizza *pizza = [[Pizza alloc] initWithSize:size andToppings:toppings];
-        if ([_delegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
-            [_delegate kitchenDidMakePizza:pizza];
+        if ([_kitchenDelegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
+            [_kitchenDelegate kitchenDidMakePizza:pizza];
+            [_deliveryDelegate deliverPizza:pizza];
         }
-        NSLog(@"%@", pizza);
         return pizza;
     }
 }

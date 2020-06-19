@@ -11,14 +11,16 @@
 #import "Kitchen.h"
 #import "Pizza.h"
 #import "HateAnchoviesManager.h"
-#import "DeliveryManager.h"
+#import "NiceManager.h"
 
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
         
         Kitchen *restaurantKitchen = [Kitchen new];
-        DeliveryManager *niceManager = [DeliveryManager new];
+        DeliveryService *deliveryService = [DeliveryService new];
+        restaurantKitchen.deliveryDelegate = deliveryService;
+        NiceManager *niceManager = [NiceManager new];
         HateAnchoviesManager *hateAnchoviesManager = [HateAnchoviesManager new];
         
         while (TRUE) {
@@ -29,9 +31,9 @@ int main(int argc, const char * argv[])
             NSString *managerChoiceInputString = [Kitchen waiter:@"Please what manager do you want tu use?\n1. Nice Manager 2. Hate Anchovies Manager 3. No manager"];
             
             if ([managerChoiceInputString isEqualToString:@"1"]) {
-                restaurantKitchen.delegate = niceManager;
+                restaurantKitchen.kitchenDelegate = niceManager;
             } else if ([managerChoiceInputString isEqualToString:@"2"]) {
-                restaurantKitchen.delegate = hateAnchoviesManager;
+                restaurantKitchen.kitchenDelegate = hateAnchoviesManager;
             }
             // Take the first word of the command as the size, and the rest as the toppings
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
@@ -48,6 +50,8 @@ int main(int argc, const char * argv[])
             } else {
                 [restaurantKitchen makePizzaWithSize:size toppings:toppings];
             }
+            
+            NSLog(@"Description of delivered pizza:\n%@", [restaurantKitchen.deliveryDelegate pizzaDescriptions]);
         }
 
     }
